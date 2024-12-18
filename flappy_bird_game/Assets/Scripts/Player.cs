@@ -47,6 +47,12 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = sprites[spriteIndex];
     }
 
+    private void OnEnable()
+    {
+        Vector3 position = transform.position;
+        position.y=0f;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Obstacle") {
